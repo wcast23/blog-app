@@ -19,15 +19,15 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
- 
+
         @yield('content')
         <!-- Page content-->
         <div class="container">
@@ -124,9 +124,9 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">Web Design</a></li>
-                                        <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li>
+                                        @foreach($categories as $category)
+                                            <li><a href="#!">{{ $category }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="col-sm-6">
@@ -147,7 +147,7 @@
                 </div>
             </div>
         </div>
- 
+
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Warrior's Website 2025</p></div>
